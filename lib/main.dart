@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Qr App',
-      home: HomePage(),
+      home: const HomePage(),
       theme: ThemeData(
         scaffoldBackgroundColor: kBrandSecondColor,
         textTheme: GoogleFonts.montserratTextTheme(),

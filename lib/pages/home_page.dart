@@ -1,9 +1,12 @@
+import 'package:codigo6_qr/pages/history_page.dart';
 import 'package:codigo6_qr/pages/scanner_page.dart';
 import 'package:codigo6_qr/ui/general/colores.dart';
 import 'package:codigo6_qr/ui/widgets/common_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -13,9 +16,10 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const Text(
-                "Save QR ",
+                "SaveQR ",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -52,7 +56,14 @@ class HomePage extends StatelessWidget {
                 text: "Escanear QR",
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HistoryPage(),
+                    ),
+                  );
+                },
                 child: const Text(
                   "Ver Historial",
                   style: TextStyle(

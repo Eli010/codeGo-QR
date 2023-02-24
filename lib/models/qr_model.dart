@@ -27,7 +27,7 @@ class QRModel {
   //con esto podemos usar o llamar como un json o map
   Map<String, dynamic> toJson() => {
         //el "titulo" lo podemos poner cualquier cosa solo es un identificador
-        "titulo": title,
+        "title": title,
         "observation": observation,
         "url": url,
         "address": address,

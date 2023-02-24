@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:codigo6_qr/pages/register_page.dart';
-import 'package:codigo6_qr/ui/general/colores.dart';
 import 'package:codigo6_qr/ui/widgets/common_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
@@ -89,8 +88,8 @@ class _ScannerPageState extends State<ScannerPage> {
       children: [
         Expanded(
           flex: 4,
-          child: SizedBox(),
-          // child: _buildQrView(context),
+          // child: SizedBox(),
+          child: _buildQrView(context),
         ),
         Expanded(
             flex: 1,
@@ -109,7 +108,7 @@ class _ScannerPageState extends State<ScannerPage> {
                     maxLines: 2,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                     ),
@@ -118,12 +117,15 @@ class _ScannerPageState extends State<ScannerPage> {
                     height: 8,
                   ),
                   CommonButtonWidget(
-                    onPressed: !urlData.isNotEmpty
+                    onPressed: urlData.isNotEmpty
                         ? () {
+                            Navigator.pop(context);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => RegisterPage(),
+                                  builder: (context) => RegisterPage(
+                                    url: urlData,
+                                  ),
                                 ));
                           }
                         : null,
